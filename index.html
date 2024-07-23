@@ -3,37 +3,227 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Website Title</title>
+    <title>LeadReal</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            color: #333;
+        }
+        a {
+            color: #1e90ff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Header */
+        header {
+            background-color: #1e90ff;
+            color: #fff;
+            padding: 1em 0;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+        }
+
+        /* Main Wrapper */
+        .wrapper {
+            margin: 4.75em 0;
+        }
+        .wrapper:before, .wrapper:after {
+            content: "";
+            display: block;
+            height: 4.75em;
+        }
+        .wrapper:before {
+            top: -4.75em;
+        }
+        .wrapper:after {
+            bottom: -4.75em;
+            left: 0;
+        }
+        .wrapper .inner {
+            padding: 3em;
+            width: 100%;
+        }
+
+        /* Spotlight Section */
+        .wrapper.spotlight {
+            background-color: #4c5c96;
+        }
+        .wrapper.spotlight:before, .wrapper.spotlight:after {
+            background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%234c5c96%3B' /%3E%3C/svg%3E");
+        }
+        .wrapper.spotlight .inner {
+            display: flex;
+            align-items: center;
+        }
+        .wrapper.spotlight .image {
+            border-radius: 100%;
+            margin: 0 3em 2em 0;
+            width: 22em;
+            overflow: hidden;
+        }
+        .wrapper.spotlight .image img {
+            border-radius: 100%;
+            width: 100%;
+        }
+        .wrapper.spotlight .content {
+            width: 100%;
+        }
+
+        /* Footer */
+        #footer {
+            background-color: #2e3141;
+            background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("../../images/bg.jpg");
+            background-size: cover;
+            background-position: center;
+            padding-top: 6.5em;
+        }
+        #footer .inner {
+            padding: 5em 0 3em;
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            margin: 0 auto;
+            width: 55em;
+        }
+        #footer .inner > * {
+            width: 100%;
+        }
+        #footer .inner form {
+            margin: 0 3em 0 0;
+            width: calc(50% - 1.5em);
+        }
+        #footer .inner .contact {
+            width: calc(50% - 1.5em);
+        }
+        #footer .inner .copyright {
+            border-top: solid 2px rgba(255, 255, 255, 0.125);
+            list-style: none;
+            margin: 4em 0 2em;
+            padding: 2em 0 0;
+            width: 100%;
+        }
+        #footer .inner .copyright li {
+            border-left: solid 2px rgba(255, 255, 255, 0.125);
+            color: rgba(255, 255, 255, 0.35);
+            display: inline-block;
+            font-size: 0.9em;
+            line-height: 1;
+            margin-left: 1em;
+            padding-left: 1em;
+        }
+        #footer .inner .copyright li:first-child {
+            border-left: 0;
+            margin-left: 0;
+            padding-left: 0;
+        }
+        #footer .inner .copyright li a {
+            color: inherit;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 1280px) {
+            #footer {
+                margin-top: -6.5em;
+                padding-top: 6.5em;
+            }
+        }
+        @media screen and (max-width: 980px) {
+            #footer {
+                margin-top: -4.75em;
+                padding-top: 4.75em;
+            }
+            #footer .inner {
+                padding: 3em;
+                width: 100%;
+            }
+            #footer .inner form, #footer .inner .contact {
+                width: 100%;
+                margin: 0 0 4em 0;
+            }
+        }
+        @media screen and (max-width: 736px) {
+            #footer {
+                margin-top: -2.5em;
+                padding-top: 2.5em;
+            }
+            #footer .inner {
+                padding: 2em;
+            }
+        }
+        @media screen and (max-width: 480px) {
+            .wrapper.spotlight .inner {
+                display: block;
+            }
+            .wrapper.spotlight .image {
+                margin: 0 0 1em;
+                max-width: 85%;
+                width: 12em;
+            }
+            #footer .inner .copyright li {
+                border-left: 0;
+                display: block;
+                margin: 1em 0 0;
+                padding-left: 0;
+            }
+        }
+        @media screen and (max-width: 360px) {
+            .wrapper .inner {
+                padding: 2em 1.5em 0.1em;
+            }
+        }
+    </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
-        <!-- Your header content -->
+        <h1>LeadReal</h1>
     </header>
 
-    <!-- Main Content -->
-    <main>
-        <!-- Your main content -->
-    </main>
+    <section class="wrapper spotlight">
+        <div class="inner">
+            <div class="image">
+                <img src="path/to/your-image.jpg" alt="Spotlight Image">
+            </div>
+            <div class="content">
+                <h2>Transform Your Lead Generation</h2>
+                <p>At LeadReal, we specialize in cutting-edge lead generation and engagement solutions tailored for real estate professionals. Our technology-driven approach ensures you get high-quality leads and grow your social media presence effectively.</p>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
     <footer id="footer">
         <div class="inner">
-            <form>
-                <!-- Your form content -->
+            <form action="your-form-handler-url" method="post">
+                <h3>Contact Us</h3>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message"></textarea>
+                <button type="submit">Send</button>
             </form>
             <div class="contact">
-                <!-- Contact information -->
+                <h3>Contact Information</h3>
+                <p>Email: support@leadreal.com</p>
+                <p>Phone: 123-456-7890</p>
             </div>
             <ul class="copyright">
                 <li><a href="#">Privacy Policy</a></li>
                 <li><a href="#">Terms of Service</a></li>
-                <!-- Other links -->
+                <li><a href="#">© 2024 LeadReal. All rights reserved.</a></li>
             </ul>
         </div>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>
